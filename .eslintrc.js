@@ -1,12 +1,12 @@
 module.exports = {
   extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended',
+    'airbnb-typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
+    'plugin:react/recommended',
+    'airbnb/hooks',
     'prettier',
     'plugin:prettier/recommended',
   ],
@@ -14,6 +14,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
+    project: './tsconfig.eslint.json',
   },
   rules: {
     'no-unused-vars': 'off',
