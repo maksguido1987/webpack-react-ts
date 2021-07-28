@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const MiniCaaExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
@@ -21,11 +20,11 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCaaExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCaaExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(?:ico|png|jpe?g|gif|svg)$/i,
@@ -48,8 +47,5 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: path.resolve(__dirname, '..', './src/assets'), to: 'assets' }],
     }),
-    new MiniCaaExtractPlugin({
-      filename: 'bundle.js',
-    })
   ],
 };

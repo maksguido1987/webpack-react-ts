@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const EslintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -9,5 +10,6 @@ module.exports = {
       'process.env.name': JSON.stringify('Covevolution'),
     }),
     new BundleAnalyzerPlugin(),
+    new EslintWebpackPlugin({ extensions: ['ts', 'tsx', 'js', 'jsx'] }),
   ],
 };
