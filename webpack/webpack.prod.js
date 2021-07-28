@@ -10,6 +10,9 @@ module.exports = {
       'process.env.name': JSON.stringify('Covevolution'),
     }),
     new BundleAnalyzerPlugin(),
-    new EslintWebpackPlugin({ extensions: ['ts', 'tsx', 'js', 'jsx'] }),
+    new EslintWebpackPlugin({
+      extensions: ['ts', 'tsx', 'js', 'jsx'],
+      failOnError : true,
+    }),
   ],
 };
